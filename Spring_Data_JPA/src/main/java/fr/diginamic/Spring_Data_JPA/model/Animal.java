@@ -1,75 +1,86 @@
 package fr.diginamic.Spring_Data_JPA.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import fr.diginamic.Spring_Data_JPA.enums.Sex;
 import jakarta.persistence.*;
 
 @Entity
 public class Animal {
+
+    // ------------------------- Attributes -------------------------
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String color;
 
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    private Sex sex;
 
     @ManyToOne
     @JoinColumn(name = "species_id")
     private Species species;
 
-    @ManyToOne
-    @JoinColumn(name = "personne_id")
-    private Person personne;
+    @ManyToMany(mappedBy = "animals")
+    private List<Person> person = new ArrayList<>();
 
+    // ------------------------- Constructors -------------------------
     public Animal() {
     }
 
-    public Animal(String name, Species species) {
-        this.name = name;
-        this.species = species;
+    // ------------------------- Getters & Setters -------------------------
+    public Integer getId() {
+        return id;
     }
 
-    public Animal(Long id, String name, Species species) {
-        this(name, species);
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public Long getId() {
-        return id;
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getName() {
         return name;
     }
 
-    public Species getSpecies() {
-
-        return species;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public void setName(String name) {
-
         this.name = name;
     }
 
+    public Sex getSex() {
+        return sex;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public Species getSpecies() {
+        return species;
+    }
+
     public void setSpecies(Species species) {
-
         this.species = species;
-    }
-
-    public Person getPersonne() {
-        return personne;
-    }
-
-    public void setPersonne(Person personne) {
-        this.personne = personne;
     }
 
     @Override
     public String toString() {
-        return "Animal [id=" + id + ", name=" + name + ", species=" + species
-                + "]";
+        return "Animal{" +
+                "id=" + id +
+                ", color='" + color + '\'' +
+                ", name='" + name + '\'' +
+                ", sex=" + sex +
+                ", species=" + species +
+                '}';
     }
-
 }

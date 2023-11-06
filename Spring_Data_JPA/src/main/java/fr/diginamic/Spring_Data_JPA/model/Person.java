@@ -1,63 +1,72 @@
 package fr.diginamic.Spring_Data_JPA.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
 
 @Entity
 public class Person {
+    // ------------------------- Attributes -------------------------
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
-    private String firstName;
+    private int age;
 
-    private String lastName;
+    private String firstname;
 
-    @OneToMany(mappedBy = "person")
-    private List<Animal> animals;
+    private String lastname;
 
-    @ManyToOne
-    private Species species;
+    @ManyToMany
+    private List<Animal> animals = new ArrayList<>();
 
+    // ------------------------- Constructors -------------------------
     public Person() {
     }
 
-    public Person(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    // ------------------------- Getters & Setters -------------------------
+    public Person(String firstname, String lastname, int age) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.age = age;
     }
 
-    public Person(Long id, String firstName, String lastName) {
-        this(firstName, lastName);
+    public Person(Integer id, String firstname, String lastname, int age) {
+        this(firstname, lastname, age);
         this.id = id;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
     public String getFirstName() {
-        return firstName;
+        return firstname;
     }
 
     public String getLastName() {
-
-        return lastName;
+        return lastname;
     }
 
-    public void setId(Long id) {
+    public int getAge() {
+        return age;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public void setFirstName(String firstName) {
-
-        this.firstName = firstName;
+    public void setFirstName(String firstname) {
+        this.firstname = firstname;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(String lastname) {
+        this.lastname = lastname;
+    }
 
-        this.lastName = lastName;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public List<Animal> getAnimals() {
@@ -68,18 +77,8 @@ public class Person {
         this.animals = animals;
     }
 
-    public Species getSpecies() {
-        return species;
-    }
-
-    public void setSpecies(Species species) {
-        this.species = species;
-    }
-
     @Override
     public String toString() {
-        return "Person [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName
-                + "]";
+        return "Person [id=" + id + ", firstname=" + firstname + ", lastname=" + lastname + ", age=" + age + "]";
     }
-
 }

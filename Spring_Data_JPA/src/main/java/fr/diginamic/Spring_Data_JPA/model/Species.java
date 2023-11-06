@@ -2,59 +2,46 @@ package fr.diginamic.Spring_Data_JPA.model;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class Species {
 
+    // ------------------------- Attributes -------------------------
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Integer id;
 
-    private String name;
+    private String common_name;
 
-    @OneToMany(mappedBy = "species")
-    private List<Animal> animals;
+    private String latin_name;
 
-    @ManyToMany(mappedBy = "species")
-    private List<Person> persons;
-
+    // ------------------------- Constructors -------------------------
     public Species() {
     }
 
-    public Species(String name) {
-        this.name = name;
+    // ------------------------- Getters & Setters -------------------------
+
+    public String getCommon_name() {
+        return common_name;
     }
 
-    public Long getId() {
+    public void setCommon_name(String common_name) {
+        this.common_name = common_name;
+    }
+
+    public String getLatin_name() {
+        return latin_name;
+    }
+
+    public void setLatin_name(String latin_name) {
+        this.latin_name = latin_name;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<Animal> getAnimals() {
-        return animals;
-    }
-
-    public void setAnimals(List<Animal> animals) {
-        this.animals = animals;
-    }
-
-    public List<Person> getPersons() {
-        return persons;
-    }
-
-    public void setPersons(List<Person> persons) {
-        this.persons = persons;
-    }
 }
