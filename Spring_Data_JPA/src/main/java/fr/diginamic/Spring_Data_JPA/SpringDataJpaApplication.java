@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import fr.diginamic.Spring_Data_JPA.repository.*;
 
 @SpringBootApplication
-public class SpringDataJpaApplication  {
+public class SpringDataJpaApplication implements CommandLineRunner {
 	@Autowired
 	private AnimalRepository animalRepository;
 
@@ -20,6 +20,21 @@ public class SpringDataJpaApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDataJpaApplication.class, args);
+	}
+
+	@Override
+	public void run(String... args) throws Exception {
+		// Effectuez des opérations de démarrage ici
+		System.out.println("L'application démarre.");
+
+		// Annimal Repository
+		animalRepository.findAll().forEach(System.out::println);
+
+		// Person Repository
+		personRepository.findAll().forEach(System.out::println);
+
+		// Species Repository
+		speciesRepository.findAll().forEach(System.out::println);
 	}
 
 }

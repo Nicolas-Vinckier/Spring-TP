@@ -1,6 +1,5 @@
 package fr.diginamic.Spring_Data_JPA.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.*;
@@ -9,7 +8,7 @@ import jakarta.persistence.*;
 public class Person {
     // ------------------------- Attributes -------------------------
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private int age;
@@ -19,7 +18,9 @@ public class Person {
     private String lastname;
 
     @ManyToMany
-    private List<Animal> animals = new ArrayList<>();
+    @JoinTable(name = "person_animals", joinColumns = @JoinColumn(name = "person_id"), inverseJoinColumns = @JoinColumn(name = "animals_id")) // Nom
+    @Column(name = "id_person")
+    private List<Animal> animals;
 
     // ------------------------- Constructors -------------------------
     public Person() {

@@ -7,7 +7,7 @@ public class Species {
 
     // ------------------------- Attributes -------------------------
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String common_name;
@@ -44,4 +44,9 @@ public class Species {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return "Species{" + "id=" + id + ", common_name='" + common_name + '\'' + ", latin_name='" + latin_name + '\''
+                + '}';
+    }
 }

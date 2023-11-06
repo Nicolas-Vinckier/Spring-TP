@@ -1,6 +1,5 @@
 package fr.diginamic.Spring_Data_JPA.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import fr.diginamic.Spring_Data_JPA.enums.Sex;
@@ -26,7 +25,7 @@ public class Animal {
     private Species species;
 
     @ManyToMany(mappedBy = "animals")
-    private List<Person> person = new ArrayList<>();
+    private List<Person> person;
 
     // ------------------------- Constructors -------------------------
     public Animal() {
