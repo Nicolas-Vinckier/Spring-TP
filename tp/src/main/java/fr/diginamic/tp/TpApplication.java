@@ -16,14 +16,17 @@ public class TpApplication {
 		SpringApplication.run(TpApplication.class, args);
 	}
 
+	@Autowired
+	private BavardService bavardService;
+
 	@GetMapping("hello")
 	public String hello() {
-		return "Hello World !";
+		return bavardService.parler("Fromage");
 	}
 
-	@Autowired
-	public void setBavardService(BavardService bavardService) {
-		bavardService.parler();
+	@GetMapping("blabla")
+	public String blabla() {
+		return bavardService.parler("Baguette");
 	}
 
 }
