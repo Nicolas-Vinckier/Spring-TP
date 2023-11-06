@@ -12,6 +12,15 @@ public class BavardService {
         // Constructeur par défaut
     }
 
+    // Getter & setter
+    // public String getNom() {
+    // return nom;
+    // }
+
+    // public void setNom(String nom) {
+    // this.nom = nom;
+    // }
+
     public String parler(String nom) {
         System.out.println(nom + " -> " + this.getClass().getSimpleName());
         return nom + " -> " + this.getClass().getSimpleName();
