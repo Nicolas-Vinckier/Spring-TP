@@ -5,8 +5,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import fr.diginamic.Spring_Data_JPA.enums.Sex;
-import fr.diginamic.Spring_Data_JPA.model.Animal;
+// import fr.diginamic.Spring_Data_JPA.enums.Sex;
+// import fr.diginamic.Spring_Data_JPA.model.Animal;
 import fr.diginamic.Spring_Data_JPA.repository.*;
 
 @SpringBootApplication
@@ -51,6 +51,7 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 
 		// Retrouver une espèce par son nom (avec la méthode findByCommonName)
 		System.out.println(speciesRepository.findFirstByCommonName("Chien"));
+		System.out.println(speciesRepository.findBylatinNameContainsIgnoreCase("canis"));
 
 	}
 

@@ -13,7 +13,8 @@ public class Species {
     @Column(name = "common_name")
     private String commonName;
 
-    private String latin_name;
+    @Column(name = "latin_name")
+    private String latinName;
 
     // ------------------------- Constructors -------------------------
     public Species() {
@@ -30,11 +31,11 @@ public class Species {
     }
 
     public String getLatin_name() {
-        return latin_name;
+        return latinName;
     }
 
-    public void setLatin_name(String latin_name) {
-        this.latin_name = latin_name;
+    public void setLatin_name(String latinName) {
+        this.latinName = latinName;
     }
 
     public Integer getId() {
@@ -47,7 +48,7 @@ public class Species {
 
     @Override
     public String toString() {
-        return "Species{" + "id=" + id + ", common_name='" + commonName + '\'' + ", latin_name='" + latin_name + '\''
+        return "Species{" + "id=" + id + ", common_name='" + commonName + '\'' + ", latin_name='" + latinName + '\''
                 + '}';
     }
 }
