@@ -5,8 +5,6 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-// import fr.diginamic.Spring_Data_JPA.enums.Sex;
-// import fr.diginamic.Spring_Data_JPA.model.Animal;
 import fr.diginamic.Spring_Data_JPA.repository.*;
 
 @SpringBootApplication
@@ -79,7 +77,18 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		System.out.println("===================== findByCommonNameLike =====================");
 		System.out.println(speciesRepository.findByCommonNameLike("Chien"));
 		System.out.println("================================================================");
-		
+
+		// Avec la méthode findByAgeBetween, retournez toutes les personnes dont l'âge
+		// est entre xx et xx ans.
+		System.out.println("===================== findByAgeBetween =====================");
+		System.out.println(personRepository.findByAgeBetween(18, 30));
+		System.out.println("============================================================");
+
+		// Avec la méthode findByAnimal, retournez toutes les personnes qui possèdent un
+		// animal donné
+		System.out.println("===================== findByAnimal =====================");
+		System.out.println(personRepository.findByAnimal(animalRepository.findById(1).orElseThrow()));
+		System.out.println("========================================================");
 	}
 
 }
