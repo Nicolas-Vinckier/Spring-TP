@@ -53,6 +53,10 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		System.out.println(speciesRepository.findFirstByCommonName("Chien"));
 		System.out.println(speciesRepository.findBylatinNameContainsIgnoreCase("canis"));
 
+		// Retrouver des humains par leur nom ou prénom (avec la méthode
+		// findFirstByLastNameOrFirstName)
+		System.out.println(personRepository.findFirstByLastnameOrFirstname("Doe", "Bill"));
+
 	}
 
 }
