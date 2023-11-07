@@ -46,6 +46,9 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		animal.setSpecies(speciesRepository.findById(1).get());
 		animalRepository.save(animal);
 
+		// Supprimer un animal
+		personRepository.deleteById(1);
+
 	}
 
 }
