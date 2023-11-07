@@ -49,23 +49,23 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// // Supprimer un animal
 		// personRepository.deleteById(1);
 
-		// Retrouver une espèce par son nom (avec la méthode findByCommonName)
-		System.out.println(speciesRepository.findFirstByCommonName("Chien"));
-		System.out.println(speciesRepository.findBylatinNameContainsIgnoreCase("canis"));
+		// // Retrouver une espèce par son nom (avec la méthode findByCommonName)
+		// System.out.println(speciesRepository.findFirstByCommonName("Chien"));
+		// System.out.println(speciesRepository.findBylatinNameContainsIgnoreCase("canis"));
 
-		// Retrouver des humains par leur nom ou prénom (avec la méthode
-		// findFirstByLastNameOrFirstName)
-		System.out.println(personRepository.findFirstByLastnameOrFirstname("Doe", "Bill"));
+		// // Retrouver des humains par leur nom ou prénom (avec la méthode
+		// // findFirstByLastNameOrFirstName)
+		// System.out.println(personRepository.findFirstByLastnameOrFirstname("Doe", "Bill"));
 
-		// Retrouver des humains par leur âge (avec la méthode
-		// findByAgeGreaterThanEqual)
-		System.out.println(personRepository.findByAgeGreaterThanEqual(50));
+		// // Retrouver des humains par leur âge (avec la méthode
+		// // findByAgeGreaterThanEqual)
+		// System.out.println(personRepository.findByAgeGreaterThanEqual(50));
 
-		// Retrouver des animaux par leur espèce (avec la méthode findBySpeciesId)
-		System.out.println(animalRepository.findBySpecies(speciesRepository.findById(1).get()));
+		// // Retrouver des animaux par leur espèce (avec la méthode findBySpeciesId)
+		// System.out.println(animalRepository.findBySpecies(speciesRepository.findById(1).get()));
 
-		// Retrouver des animaux par leur couleur (avec la méthode findByColor)
-		System.out.println(animalRepository.findByColor("Roux"));
+		// // Retrouver des animaux par leur couleur (avec la méthode findByColor)
+		// System.out.println(animalRepository.findByColor("Roux"));
 	}
 
 }
