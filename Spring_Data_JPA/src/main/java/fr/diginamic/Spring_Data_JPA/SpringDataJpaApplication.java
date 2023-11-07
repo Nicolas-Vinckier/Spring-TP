@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import fr.diginamic.Spring_Data_JPA.enums.Sex;
 import fr.diginamic.Spring_Data_JPA.repository.*;
 
 @SpringBootApplication
@@ -89,6 +90,12 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		System.out.println("===================== findByAnimal =====================");
 		System.out.println(personRepository.findByAnimal(animalRepository.findById(1).orElseThrow()));
 		System.out.println("========================================================");
+
+		// Avec la méthode countBySex, retournez le nombre d'animaux du sexe donné
+		System.out.println("===================== countBySex =====================");
+		System.out.println(animalRepository.countBySex(Sex.M));
+		System.out.println(animalRepository.countBySex(Sex.F));
+		System.out.println("======================================================");
 	}
 
 }
