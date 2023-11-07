@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import fr.diginamic.Spring_Data_JPA.model.Person;
 
-public interface PersonRepository extends CrudRepository<Person, Long> {
-    
+public interface PersonRepository extends CrudRepository<Person, Integer> {
+
 }
