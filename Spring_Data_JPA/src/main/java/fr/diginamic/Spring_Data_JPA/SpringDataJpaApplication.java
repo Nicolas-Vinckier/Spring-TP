@@ -57,6 +57,9 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// findFirstByLastNameOrFirstName)
 		System.out.println(personRepository.findFirstByLastnameOrFirstname("Doe", "Bill"));
 
+		// Retrouver des humains par leur âge (avec la méthode
+		// findByAgeGreaterThanEqual)
+		System.out.println(personRepository.findByAgeGreaterThanEqual(50));
 	}
 
 }
