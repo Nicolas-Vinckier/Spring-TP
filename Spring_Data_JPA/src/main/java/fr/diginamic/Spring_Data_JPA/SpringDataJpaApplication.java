@@ -62,7 +62,7 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		System.out.println(personRepository.findByAgeGreaterThanEqual(50));
 
 		// Retrouver des animaux par leur espèce (avec la méthode findBySpeciesId)
-		System.out.println(animalRepository.findBySpeciesId(1));
+		System.out.println(animalRepository.findBySpecies(speciesRepository.findById(1).get()));
 
 		// Retrouver des animaux par leur couleur (avec la méthode findByColor)
 		System.out.println(animalRepository.findByColor("Roux"));
