@@ -55,7 +55,8 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 
 		// // Retrouver des humains par leur nom ou prénom (avec la méthode
 		// // findFirstByLastNameOrFirstName)
-		// System.out.println(personRepository.findFirstByLastnameOrFirstname("Doe", "Bill"));
+		// System.out.println(personRepository.findFirstByLastnameOrFirstname("Doe",
+		// "Bill"));
 
 		// // Retrouver des humains par leur âge (avec la méthode
 		// // findByAgeGreaterThanEqual)
@@ -66,6 +67,19 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 
 		// // Retrouver des animaux par leur couleur (avec la méthode findByColor)
 		// System.out.println(animalRepository.findByColor("Roux"));
+
+		// Avec la méthode findAllByOrderByCommonNameAsc (qui utilise une Query),
+		// retournez toutes les espèces triées par ordre alphabétique de nom commun.
+		System.out.println("===================== findAllByOrderByCommonNameAsc =====================");
+		System.out.println(speciesRepository.findAllByOrderByCommonNameAsc());
+		System.out.println("=========================================================================");
+
+		// Avec la méthode findByCommonNameLike (qui utilise une Query), retournez
+		// toutes les espèces dont le nom commun contient le mot "xxx".
+		System.out.println("===================== findByCommonNameLike =====================");
+		System.out.println(speciesRepository.findByCommonNameLike("Chien"));
+		System.out.println("================================================================");
+		
 	}
 
 }
