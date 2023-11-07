@@ -10,7 +10,8 @@ public class Species {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String common_name;
+    @Column(name = "common_name")
+    private String commonName;
 
     private String latin_name;
 
@@ -21,11 +22,11 @@ public class Species {
     // ------------------------- Getters & Setters -------------------------
 
     public String getCommon_name() {
-        return common_name;
+        return commonName;
     }
 
-    public void setCommon_name(String common_name) {
-        this.common_name = common_name;
+    public void setCommon_name(String commonName) {
+        this.commonName = commonName;
     }
 
     public String getLatin_name() {
@@ -46,7 +47,7 @@ public class Species {
 
     @Override
     public String toString() {
-        return "Species{" + "id=" + id + ", common_name='" + common_name + '\'' + ", latin_name='" + latin_name + '\''
+        return "Species{" + "id=" + id + ", common_name='" + commonName + '\'' + ", latin_name='" + latin_name + '\''
                 + '}';
     }
 }

@@ -38,16 +38,19 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// Species Repository
 		speciesRepository.findAll().forEach(System.out::println);
 
-		// Créer un animal
-		Animal animal = new Animal();
-		animal.setName("Toto");
-		animal.setColor("Rouge");
-		animal.setSex(Sex.M);
-		animal.setSpecies(speciesRepository.findById(1).get());
-		animalRepository.save(animal);
+		// // Créer un animal
+		// Animal animal = new Animal();
+		// animal.setName("Toto");
+		// animal.setColor("Rouge");
+		// animal.setSex(Sex.M);
+		// animal.setSpecies(speciesRepository.findById(1).get());
+		// animalRepository.save(animal);
 
-		// Supprimer un animal
-		personRepository.deleteById(1);
+		// // Supprimer un animal
+		// personRepository.deleteById(1);
+
+		// Retrouver une espèce par son nom (avec la méthode findByCommonName)
+		System.out.println(speciesRepository.findFirstByCommonName("Chien"));
 
 	}
 
