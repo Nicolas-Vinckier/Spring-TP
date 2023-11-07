@@ -96,6 +96,20 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		System.out.println(animalRepository.countBySex(Sex.M));
 		System.out.println(animalRepository.countBySex(Sex.F));
 		System.out.println("======================================================");
+
+		// Avec la méthode hasOwner, retournez true si l'animal donné a un propriétaire
+		System.out.println("===================== hasOwner =====================");
+		System.out.println("ID : 1 => " + animalRepository.hasOwner(animalRepository.findById(1).orElseThrow()));
+		System.out.println("ID : 2 => " + animalRepository.hasOwner(animalRepository.findById(2).orElseThrow()));
+		System.out.println("ID : 3 => " + animalRepository.hasOwner(animalRepository.findById(3).orElseThrow()));
+		System.out.println("ID : 4 => " + animalRepository.hasOwner(animalRepository.findById(4).orElseThrow()));
+		System.out.println("ID : 5 => " + animalRepository.hasOwner(animalRepository.findById(5).orElseThrow()));
+		System.out.println("ID : 6 => " + animalRepository.hasOwner(animalRepository.findById(6).orElseThrow()));
+		System.out.println("ID : 7 => " + animalRepository.hasOwner(animalRepository.findById(7).orElseThrow()));
+		System.out.println("ID : 8 => " + animalRepository.hasOwner(animalRepository.findById(8).orElseThrow()));
+		System.out.println("ID : 9 => " + animalRepository.hasOwner(animalRepository.findById(9).orElseThrow()));
+		System.out.println("====================================================");
+
 	}
 
 }

@@ -72,6 +72,8 @@ public class Animal {
         this.species = species;
     }
 
+    // ------------------------- To String -------------------------
+
     @Override
     public String toString() {
         return "Animal{" +
