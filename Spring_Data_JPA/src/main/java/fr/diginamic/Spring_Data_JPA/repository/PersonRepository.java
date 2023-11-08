@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 
 import fr.diginamic.Spring_Data_JPA.model.*;
 
-public interface PersonRepository extends CrudRepository<Person, Integer>, PersonRepositoryCustom {
+public interface PersonRepository extends CrudRepository<Person, Integer> {
 
     List<Person> findFirstByLastnameOrFirstname(String lastname, String firstname);
 
