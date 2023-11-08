@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // import fr.diginamic.Spring_Data_JPA.enums.Sex;
 import fr.diginamic.Spring_Data_JPA.repository.*;
+import jakarta.transaction.Transactional;
 
 @SpringBootApplication
 public class SpringDataJpaApplication implements CommandLineRunner {
@@ -23,6 +24,7 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		SpringApplication.run(SpringDataJpaApplication.class, args);
 	}
 
+	@Transactional
 	@Override
 	public void run(String... args) throws Exception {
 		// Effectuez des opérations de démarrage ici
@@ -126,6 +128,7 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// animalRepository.hasOwner(animalRepository.findById(9).orElseThrow()));
 		// System.out.println("====================================================");
 
+		personRepository.deleteAllByAnimalsEmpty();
 	}
 
 }
