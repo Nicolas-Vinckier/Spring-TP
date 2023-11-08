@@ -128,7 +128,11 @@ public class SpringDataJpaApplication implements CommandLineRunner {
 		// animalRepository.hasOwner(animalRepository.findById(9).orElseThrow()));
 		// System.out.println("====================================================");
 
+		// Permets de supprimer les personnes qui n'ont pas d'animaux
 		personRepository.deleteAllByAnimalsEmpty();
+
+		// Permets de créer x personnes
+		personRepository.createXPerson(5);
 	}
 
 }
