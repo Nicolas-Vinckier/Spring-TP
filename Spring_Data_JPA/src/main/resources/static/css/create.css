@@ -1,0 +1,25 @@
+/* 
+Classe css pour la page create.html
+*/
+
+#NouvelleEspece {
+    /* Flex */
+    display: flex;
+    /* Alignement */
+    margin: 0 auto;
+    width: 80%;
+    padding: 10px;
+    /* Bordure */
+    border: 1px solid green;
+    /* Fond */
+    background-color: #f2f2f2;
+}
+
+form {
+    /* Flex */
+    display: flex;
+    flex-direction: row;
+
+    /* Alignement */
+    padding: 1%;
+}
