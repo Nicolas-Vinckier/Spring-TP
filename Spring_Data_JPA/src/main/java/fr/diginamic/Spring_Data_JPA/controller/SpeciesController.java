@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import fr.diginamic.Spring_Data_JPA.model.Species;
@@ -47,21 +46,17 @@ public class SpeciesController {
         return "create_species";
     }
 
-    // @PostMapping("/species")
-    // public String createOrUpdate(Species speciesItem) {
-    // this.speciesRepository.save(speciesItem);
-    // return "redirect:/species";
-    // }
-    @PostMapping("/")
-    public String createOrUpdate(@RequestBody Species speciesItem) {
-        this.speciesRepository.save(speciesItem);
+    @PostMapping
+    public String createOrUpdate(Species speciesItem) {
+        System.out.println(speciesItem);
+        speciesRepository.save(speciesItem);
         return "redirect:/species";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") Integer speciesId) {
-        Optional<Species> speciesToDelete = this.speciesRepository.findById(speciesId);
-        speciesToDelete.ifPresent(species -> this.speciesRepository.delete(species));
+        Optional<Species> speciesToDelete = speciesRepository.findById(speciesId);
+        speciesToDelete.ifPresent(species -> speciesRepository.delete(species));
         return "redirect:/species";
     }
 
