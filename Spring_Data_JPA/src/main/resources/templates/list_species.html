@@ -22,6 +22,11 @@
                     <!-- … -->
                 </thead>
                 <tbody>
+                    <tr>
+                        <th>Nom commun</th>
+                        <th>Nom latin</th>
+                        <th>Modifier</th>
+                    </tr>
                     <tr th:each="speciesItem : ${speciesList}">
                         <td th:text="${speciesItem.commonName}" />
                         <td th:text="${speciesItem.latinName}" />
