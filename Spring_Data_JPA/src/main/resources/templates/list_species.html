@@ -15,8 +15,12 @@
         Balise table pour afficher les données de la liste des espèces
      -->
         <header>
-            <button class="btn-shine" type="button" onclick="window.location='/species/create'">➕ Ajouter une
-                Espèce</button>
+            <!-- Text in button : "➕" + "Ajouter une Espèce" -->
+            <button class="btn-shine" type="button" onclick="window.location='/species/create'">
+                <!-- <span aria-hidden="" class="marquee">➕</span> -->
+                <span class="text">Ajouter une Espèce</span>
+                <!-- <span aria-hidden="" class="marquee">➕</span> -->
+            </button>
 
             <table class="mainTable">
                 <thead>
