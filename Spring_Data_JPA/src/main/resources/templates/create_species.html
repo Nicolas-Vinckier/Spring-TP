@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'une Espèce</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/create.css" />
+</head>
+
+<body>
+    <h1>Création d'une Espèce</h1>
+
+    <div id="NouvelleEspece">
+        <form th:action="@{/species}" th:object="${species}" method="post">
+
+            <label for="name">Name:</label>
+
+            <input type="text" id="name" name="name">
+
+            <label for="description">Description:</label>
+
+            <input id="description" name="description">
+
+            <button type="submit">Save</button>
+        </form>
+    </div>
+</body>
+
+</html>
