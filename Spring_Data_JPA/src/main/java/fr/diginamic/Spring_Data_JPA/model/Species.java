@@ -22,19 +22,19 @@ public class Species {
 
     // ------------------------- Getters & Setters -------------------------
 
-    public String getCommon_name() {
+    public String getCommonName() {
         return commonName;
     }
 
-    public void setCommon_name(String commonName) {
+    public void setCommonName(String commonName) {
         this.commonName = commonName;
     }
 
-    public String getLatin_name() {
+    public String getLatinName() {
         return latinName;
     }
 
-    public void setLatin_name(String latinName) {
+    public void setLatinName(String latinName) {
         this.latinName = latinName;
     }
 
