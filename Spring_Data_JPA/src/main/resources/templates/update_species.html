@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modification d'une Espèce</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/update.css" />
+    <link rel="stylesheet" href="/css/buttonStyle.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+</head>
+
+<body>
+    <h1>Modification de <span th:text="${species.commonName}"></span></h1>
+
+    <form class="form" th:action="@{/species}" th:object="${species}" th:method="post">
+        <input type="hidden" th:field="*{id}">
+        <input type="text" th:placeholder="*{commonName}" class="input" th:field="*{commonName}" required>
+        <input type="text" th:placeholder="*{latinName}" class="input" th:field="*{latinName}" required>
+        <button class="button-confirm">Modifier →</button>
+    </form>
+
+</body>
