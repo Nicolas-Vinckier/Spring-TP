@@ -72,6 +72,7 @@ table {
 table .petit {
     width: 1%;
     max-width: 10%;
+    text-align: center;
 }
 
 tr:hover {
