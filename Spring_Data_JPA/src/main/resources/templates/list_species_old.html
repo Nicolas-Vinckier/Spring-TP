@@ -1,0 +1,165 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- <link rel="stylesheet" th:href="@{/css/main.css}" /> -->
+    <meta charset="utf-8">
+    <title>Liste des Espèces</title>
+</head>
+
+<body>
+    <style>
+        /* Body */
+        body {
+            background-color: #f2f2f2;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+        }
+
+        /* Header */
+        #Recherche {
+            margin: 0 auto;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+        }
+
+        header {
+            display: flex;
+            justify-content: center
+        }
+
+        #Recherche button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 2%;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        /* Main */
+        /* Selection */
+        #Selection {
+            margin: 0 auto;
+            width: 50%;
+            padding: 10px;
+        }
+
+        /* Form */
+
+        form {
+            margin: 0 auto;
+            width: 50%;
+            padding: 10px;
+        }
+
+        label {
+            display: inline-block;
+            min-width: 20%;
+            text-align: right;
+        }
+
+        select,
+        input[type="text"] {
+            width: 79%;
+            padding: 12px 20px;
+            margin: 8px 0;
+        }
+
+        .boutonsEspeces {
+            margin-top: 5%;
+            text-align: center;
+        }
+
+        input[type="submit"],
+        input[type="button"] {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        /* hover */
+        input[type="submit"]:hover,
+        input[type="button"]:hover {
+            background-color: #3c7a3f;
+
+        }
+
+        /* Footer */
+        footer {
+            display: flex;
+            justify-content: center
+        }
+
+        a {
+            background-color: #d35e56;
+            padding: 1%;
+            border-radius: 100%;
+        }
+
+        a:hover {
+            background-color: #ff0000;
+        }
+    </style>
+    <div id="Recherche">
+        <!-- 
+        Balise table pour afficher les données de la liste des espèces
+     -->
+        <header>
+            <button type="button" onclick="window.location='/species/create'">➕ Ajouter une Espèce</button>
+
+            <table class="mainTable">
+                <thead>
+                    <!-- … -->
+                </thead>
+                <tbody>
+                    <tr th:each="speciesItem : ${speciesList}">
+                        <td th:text="${speciesItem.commonName}" />
+                        <td th:text="${speciesItem.latinName}" />
+                        <td><a th:href="@{'/species/' + ${speciesItem.id}}">📝</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+    </div>
+    <div id="Selection">
+        <!-- 
+    Div avec label et select pour afficher les données de la liste des espèces
+    -->
+        <div>
+            <label for="species">Espèce :</label>
+            <select th:field="*{species}" id="species">
+                <option th:each="sp:${speciesList}" th:value="${sp.id}" th:text="${sp.commonName}"></option>
+            </select>
+        </div>
+    </div>
+    <!-- 
+        Balise form pour ajouter une nouvelle espèce
+     -->
+    <form th:object="${species}" th:action="@{/species}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <div>
+            <label for="commonName">Nom Commun : </label>
+            <input type="text" th:field="*{commonName}" id="commonName" />
+        </div>
+        <div>
+            <label for="latinName">Nom latin :</label>
+            <input type="text" th:field="*{latinName}" id="latinName" />
+        </div>
+        <div class="boutonsEspeces">
+            <input type="submit" class="button" value="Sauver" />
+            <input type="button" class="button" value="Retour" onclick="window.location='/species'" />
+        </div>
+    </form>
+    <footer>
+        <a th:href="@{'/species/delete/' + ${speciesItem.id}}" onclick="return confirm('Êtes-vous sûr ?')">🗑️</a>
+    </footer>
+</body>
