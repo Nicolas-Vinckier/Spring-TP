@@ -1,0 +1,35 @@
+/* Style de base pour la table */
+.element-modification {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+/* Style des cellules de la table */
+.element-modification td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style des cellules de la première ligne (en-têtes) */
+.element-modification tr:first-child td {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Style des spans à l'intérieur des cellules */
+.element-modification span {
+    font-weight: normal;
+}
+
+.id {
+    max-width: 5%;
+    text-align: center;
+}
+
+.all {
+    width: 50%;
+}
