@@ -64,4 +64,10 @@ public class SpeciesController {
         speciesToDelete.ifPresent(species -> this.speciesRepository.delete(species));
         return "redirect:/species";
     }
+
+    // Catch all other routes
+    @GetMapping("/**")
+    public String error() {
+        return "error";
+    }
 }
