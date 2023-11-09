@@ -15,11 +15,11 @@
         Balise table pour afficher les données de la liste des espèces
      -->
         <header>
-            <button class="btn-shine" type="button" onclick="window.location='/species/create'">➕ Ajouter une Espèce</button>
+            <button class="btn-shine" type="button" onclick="window.location='/species/create'">➕ Ajouter une
+                Espèce</button>
 
             <table class="mainTable">
                 <thead>
-                    <!-- … -->
                 </thead>
                 <tbody>
                     <tr>
@@ -30,7 +30,7 @@
                     <tr th:each="speciesItem : ${speciesList}">
                         <td th:text="${speciesItem.commonName}" />
                         <td th:text="${speciesItem.latinName}" />
-                        <td><a th:href="@{'/species/' + ${speciesItem.id}}">📝</a></td>
+                        <td class="petit"><a th:href="@{'/species/' + ${speciesItem.id}}">📝</a></td>
                     </tr>
                 </tbody>
             </table>

@@ -5,7 +5,7 @@ Classe css pour la page list.html
 /* Header */
 #Recherche {
     margin: 0 auto;
-    width: 50%;
+    width: 80%;
     border: 1px solid green;
     padding: 10px;
 }
@@ -16,7 +16,10 @@ header {
 }
 
 #Recherche button {
+    display: flex;
+    align-self: center;
     margin-right: 5%;
+    max-height: 40px;
 }
 
 
@@ -52,63 +55,26 @@ label {
     text-align: right;
 }
 
-select,
-input[type="text"] {
-    width: 79%;
-    padding: 12px 20px;
-    margin: 8px 0;
-}
 
 .boutonsEspeces {
     margin-top: 5%;
     text-align: center;
 }
 
-input[type="submit"],
-input[type="button"] {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 8px;
-}
-
-/* hover */
-input[type="submit"]:hover,
-input[type="button"]:hover {
-    background-color: #3c7a3f;
-
-}
-
-/* Footer */
-footer {
-    display: flex;
-    justify-content: center
-}
-
-footer a {
-    background-color: #d35e56;
-    padding: 1%;
-    border-radius: 100%;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 5%;
-}
-
 a:hover {
     background-color: #ff0000;
 }
 
+table {
+    width: 100%;
+}
 
+table .petit {
+    width: 1%;
+    max-width: 10%;
+}
 
-/* 
-Bouton stylé
-*/
+/* ----------------------- Bouton stylé ----------------------- */
 
 button {
     position: relative;
