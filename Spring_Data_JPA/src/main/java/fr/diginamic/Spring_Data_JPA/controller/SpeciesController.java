@@ -65,7 +65,12 @@ public class SpeciesController {
         return "redirect:/species";
     }
 
-    // Catch all other routes
+    // Catch other routes
+    @GetMapping("")
+    public String list() {
+        return "redirect:/species/";
+    }
+
     @GetMapping("/**")
     public String error() {
         return "error";
