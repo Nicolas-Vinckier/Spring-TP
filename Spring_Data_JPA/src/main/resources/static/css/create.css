@@ -15,6 +15,9 @@ Classe css pour la page create.html
     background-color: #f2f2f2;
 }
 
+/*
+Formulaire de création d'une nouvelle espèce
+*/
 form {
     /* Flex */
     display: flex;
@@ -22,4 +25,63 @@ form {
 
     /* Alignement */
     padding: 1%;
+    flex-wrap: wrap;
+
+    width: 100%;
+}
+
+.form-commonName {
+    /* Flex */
+    display: flex;
+    margin: 1%;
+
+    /* Alignement */
+    width: 40%;
+    height: 100%;
+}
+
+/* .form-commonName input {
+    display: flex;
+    margin: 1%;
+    width: 70%;
+    height: 100%;
+} */
+
+.input {
+    width: 100%;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #e8e8e8;
+    box-shadow: 20px 20px 60px #c5c5c5,
+        -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.input:focus {
+    outline-color: #e8e8e8;
+    background: #e8e8e8;
+    box-shadow: inset 20px 20px 60px #c5c5c5,
+        inset -20px -20px 60px #ffffff;
+    transition: 0.3s;
+}
+
+.form-latinName {
+    /* Flex */
+    display: flex;
+    margin: 1%;
+
+    /* Alignement */
+    width: 40%;
+    height: 100%;
+}
+
+.form-envoie {
+    /* Flex */
+    display: flex;
+    margin: 1%;
+
+    /* Alignement */
+    width: 10%;
+    height: 100%;
 }
