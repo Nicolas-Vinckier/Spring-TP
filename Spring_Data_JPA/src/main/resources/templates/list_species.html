@@ -1,18 +1,21 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Liste des Espèces</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/list.css">
 </head>
 
 <body>
+    <h1>Liste des Espèces</h1>
+
     <div id="Recherche">
         <!-- 
         Balise table pour afficher les données de la liste des espèces
      -->
         <header>
-            <button type="button" onclick="window.location='/species/create'">➕ Ajouter une Espèce</button>
+            <button class="btn-shine" type="button" onclick="window.location='/species/create'">➕ Ajouter une Espèce</button>
 
             <table class="mainTable">
                 <thead>
