@@ -74,6 +74,13 @@ table .petit {
     max-width: 10%;
 }
 
+tr:hover {
+    /* background: #88227F; */
+    /* background: -moz-linear-gradient(left, #88227F 0%, #2EFF00 100%); */
+    /* background: -webkit-linear-gradient(left, #88227F 0%, #2EFF00 100%); */
+    background: linear-gradient(to right, #88227F49 20%, #2fff0049 100%);
+}
+
 /* ----------------------- Bouton stylé ----------------------- */
 
 button {
