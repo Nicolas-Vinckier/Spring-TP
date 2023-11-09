@@ -13,15 +13,15 @@
     <div id="NouvelleEspece">
         <form th:action="@{/species}" th:object="${species}" method="post">
 
-            <label for="name">Name:</label>
+            <label for="commonName">Nom commun:</label>
 
-            <input type="text" id="name" name="name">
+            <input type="text" id="commonName" name="commonName">
 
-            <label for="description">Description:</label>
+            <label for="latinName">Nom latin:</label>
 
-            <input id="description" name="description">
+            <input id="latinName" name="latinName">
 
-            <button type="submit">Save</button>
+            <button type="submit">Créer</button>
         </form>
     </div>
 </body>
