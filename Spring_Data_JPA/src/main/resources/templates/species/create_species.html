@@ -4,36 +4,26 @@
     <meta charset="UTF-8">
     <title>Création d'une Espèce</title>
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/create.css" />
-    <link rel="stylesheet" href="/css/buttonStyle.css" />
+    <link rel="stylesheet" href="/css/form.css" />
 </head>
 
 <body>
     <h1>Création d'une Espèce</h1>
 
     <div id="NouvelleEspece">
-        <form th:action="@{/species}" th:object="${species}" th:method="post">
+        <form th:action="@{/species}" th:object="${species}" th:method="post" class="form">
             <div class="form-commonName">
-                <!-- label -->
-                <!-- <label for="commonName">Nom commun:</label> -->
-                <!-- input -->
-                <!-- <input type="text" id="commonName" name="commonName" required> -->
                 <input type="text" name="commonName" class="input" placeholder="Nom commun" required>
             </div>
             <div class="form-latinName">
-                <!-- label -->
-                <!-- <label for="latinName">Nom latin:</label> -->
-                <!-- input -->
-                <!-- <input id="latinName" name="latinName" required> -->
                 <input type="text" name="latinName" class="input" placeholder="Nom latin" required>
             </div>
             <div class="form-envoie">
-                <!-- button -->
-                <!-- <button type="submit">Créer</button>-->
-                <button class="btn-23">
+                <button class="button-confirm">
                     <span class="text">Créer</span>
-                    <span aria-hidden="" class="marquee">GO</span>
                 </button>
+                <button class="button-confirm" type="button" onclick="window.location='/species'">
+                    <span class="text">Annuler</span>
             </div>
         </form>
     </div>
