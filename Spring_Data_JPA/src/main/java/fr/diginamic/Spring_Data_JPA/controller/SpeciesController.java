@@ -27,7 +27,7 @@ public class SpeciesController {
         List<Species> species = speciesRepository.findAll();
         model.addAttribute("speciesList", species);
 
-        return "list_species";
+        return "species/list_species";
     }
 
     @GetMapping("/{id}")
@@ -35,15 +35,15 @@ public class SpeciesController {
         Optional<Species> species = speciesRepository.findById(id);
         if (species.isPresent()) {
             model.addAttribute(species.get());
-            return "update_species";
+            return "species/update_species";
         }
-        return "error";
+        return "species/error";
     }
 
     @GetMapping("/create")
     public String initCreate(Model model) {
         model.addAttribute(new Species());
-        return "create_species";
+        return "species/create_species";
     }
 
     @PostMapping
@@ -68,6 +68,6 @@ public class SpeciesController {
 
     @GetMapping("/**")
     public String error() {
-        return "error";
+        return "species/error";
     }
 }
