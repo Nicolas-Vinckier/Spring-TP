@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'un Animal</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+
+<body>
+    <h1>Création d'un Animal</h1>
+
+    <div id="NouveauAnimo">
+        <form th:action="@{/animal}" th:object="${animal}" th:method="post" class="form">
+            <div class="form-name">
+                <input type="text" th:field="*{name}" class="input" placeholder="Nom" required>
+            </div>
+            <div class="form-color">
+                <input type="text" th:field="*{color}" class="input" placeholder="Couleur" required>
+            </div>
+            <div class="form-species">
+                <select th:field="*{species}" class="input">
+                    <option value="">Choisir l'espèce</option>
+                    <option th:each="species : ${species}" th:value="${species.id}" th:text="${species.commonName}">
+                </select>
+            </div>
+            <div class="form-animal">
+                <select th:field="*{sex}" class="input">
+                    <option value="">Choisir le sexe</option>
+                    <option th:each="sex : ${sex}" th:value="${sex.name}" th:text="${sex}">
+                </select>
+            </div>
+            <div class="form-envoie">
+                <button class="button-confirm">
+                    <span class="text">Créer</span>
+                </button>
+                <button class="button-confirm" type="button" onclick="window.location='/animal'">
+                    <span class="text">Annuler</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
