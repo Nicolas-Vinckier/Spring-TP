@@ -19,8 +19,8 @@
 }
 
 .input {
-    width: 250px;
-    height: 40px;
+    width: 22em;
+    height: 3em;
     border-radius: 5px;
     border: 2px solid var(--main-color);
     background-color: var(--bg-color);
