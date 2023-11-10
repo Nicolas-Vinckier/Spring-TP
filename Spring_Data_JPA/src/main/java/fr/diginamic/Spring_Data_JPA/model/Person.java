@@ -17,7 +17,7 @@ public class Person {
 
     private String lastname;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.DETACH)
     @JoinTable(name = "person_animals", joinColumns = @JoinColumn(name = "person_id"), inverseJoinColumns = @JoinColumn(name = "animals_id")) // Nom
     @Column(name = "id_person")
     private List<Animal> animals;
