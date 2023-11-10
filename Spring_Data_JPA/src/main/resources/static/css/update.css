@@ -33,3 +33,20 @@
 .all {
     width: 50%;
 }
+
+#ModificationAnimo * {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.form-envoie {
+    display: flex;
+    flex-direction: row;
+}
+
+.button-confirm {
+    margin: 1em;
+}
+
+
