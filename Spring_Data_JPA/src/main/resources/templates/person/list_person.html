@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Personnes</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+
+<body>
+    <h1>Liste des Personnes</h1>
+
+    <div id="Recherche">
+        <header>
+            <button class="btn-shine" type="button" onclick="window.location='/person/create'">
+                <span class="text">Ajouter une Personne</span>
+            </button>
+
+            <table class="mainTable">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Age</th>
+                        <!-- <th>Animaux possédés</th> -->
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr th:each="person : ${personList}">
+                        <td th:text="${person.firstName}" />
+                        <td th:text="${person.lastName}" />
+                        <td th:text="${person.age}" />
+                        <!-- <td th:text="${person.animals}" /> -->
+                        <td class="petit jaune"><a th:href="@{'/person/' + ${person.id}}">📝</a></td>
+                        <td class="petit rouge"><a th:href="@{'/person/delete/' + ${person.id}}">🗑️</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+    </div>
+</body>

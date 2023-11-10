@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Création d'une Personne</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/create.css">
+</head>
+
+<body>
+    <h1>Création d'une Personne</h1>
+
+    <div id="NouveauAnimo">
+        <form th:action="@{/person}" th:object="${person}" th:method="post" class="form">
+            <div class="form-firstname">
+                <input type="text" th:field="*{firstName}" class="input" placeholder="Prénom" required>
+            </div>
+            <div class="form-lastname">
+                <input type="text" th:field="*{lastName}" class="input" placeholder="Nom" required>
+            </div>
+            <div class="form-age">
+                <input type="number" th:field="*{age}" class="input" placeholder="Age" required min="0" max="99"
+                    oninput="this.value = Math.max(0, this.value);">
+            </div>
+            <div class="form-animal">
+                <select th:field="*{animals}" class="input" required>
+                    <option value="">Choisir l'animal</option>
+                    <option th:each="animal : ${animalList}" th:value="${animal.id}" th:text="${animal.name}">
+                </select>
+            </div>
+            <div class="form-envoie">
+                <button class="button-confirm">
+                    <span class="text">Créer</span>
+                </button>
+                <button class="button-confirm" type="button" onclick="window.location='/person'">
+                    <span class="text">Annuler</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
