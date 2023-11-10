@@ -93,6 +93,22 @@ tr:hover {
     background: linear-gradient(to right, #88227F49 20%, #2fff0049 100%);
 }
 
+.optionSupplementaire {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    margin: 2%;
+}
+
+.optionSupplementaire .bleu {
+    background: #38daef2f !important;
+}
+
+.optionSupplementaire .rouge {
+    background: #d35e562f !important;
+}
+
 /* ----------------------- Bouton stylé ----------------------- */
 
 button {
@@ -188,7 +204,7 @@ button:hover span {
 }
 
 .btn-shine:after {
-    background: #38ef7d;
+    background: rgba(0, 0, 0, 0.3);
     content: "";
     height: 155px;
     left: -75px;
