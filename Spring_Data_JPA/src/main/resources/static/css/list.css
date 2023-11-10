@@ -22,35 +22,6 @@ header {
     max-height: 5em;
 }
 
-
-.rouge a {
-    background-color: #d35e56;
-    padding: 1%;
-    border-radius: 100%;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 5%;
-}
-
-.rouge a:hover {
-    background-color: red;
-}
-
-.jaune a {
-    background-color: #f7d04b;
-    padding: 1%;
-    border-radius: 100%;
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 5%;
-}
-
-.jaune a:hover {
-    background-color: yellow;
-}
-
 /* Main */
 /* Selection */
 #Selection {
@@ -87,6 +58,32 @@ table .petit {
     width: 1%;
     max-width: 10%;
     text-align: center;
+    height: 2em;
+}
+
+.petit a {
+    padding: 1%;
+    border-radius: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 5%;
+}
+
+.rouge a {
+    background-color: #d35e56;
+}
+
+.rouge a:hover {
+    background-color: red;
+}
+
+.jaune a {
+    background-color: #f7d04b;
+}
+
+.jaune a:hover {
+    background-color: yellow;
 }
 
 tr:hover {
