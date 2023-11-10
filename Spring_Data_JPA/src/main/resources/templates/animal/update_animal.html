@@ -1,0 +1,41 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modification d'un Animal</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/update.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+</head>
+
+<body>
+    <section id="ModificationAnimo">
+        <h1>Modification de <span style="margin-left: 0.3em;" th:text="${animal.name}"></span></h1>
+
+        <form class="form" th:action="@{/animal}" th:object="${animal}" th:method="post">
+            <input type="hidden" th:field="*{id}">
+            <div class="form-name">
+                <input type="text" th:placeholder="*{name}" class="input" th:field="*{name}" required>
+            </div>
+            <div class="form-color">
+                <input type="text" th:placeholder="*{color}" class="input" th:field="*{color}" required>
+            </div>
+            <div class="form-species">
+                <select th:field="*{species}" class="input" required>
+                    <option value="">Choisir l'espèce</option>
+                    <option th:each="species : ${species}" th:value="${species.id}" th:text="${species.commonName}">
+                </select>
+            </div>
+            <div class="form-sex">
+                <select th:field="*{sex}" class="input" required>
+                    <option value="">Choisir le sexe</option>
+                    <option th:each="sex : ${sex}" th:value="${sex.name}" th:text="${sex}">
+                </select>
+            </div>
+            <div class="form-button">
+                <button class="button-confirm">Modifier →</button>
+                <button class="button-confirm" type="button" onclick="window.location='/animal'">← Annuler</button>
+            </div>
+        </form>
+    </section>
+</body>

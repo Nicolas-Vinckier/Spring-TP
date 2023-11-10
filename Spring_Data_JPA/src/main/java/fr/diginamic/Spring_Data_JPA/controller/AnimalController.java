@@ -40,6 +40,8 @@ public class AnimalController {
         Optional<Animal> animal = animalRepository.findById(id);
         if (animal.isPresent()) {
             model.addAttribute(animal.get());
+            model.addAttribute("sex", Sex.values());
+            model.addAttribute("species", speciesRepository.findAll());
             return "animal/update_animal";
         }
         return "animal/error";
