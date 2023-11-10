@@ -20,13 +20,13 @@
                 <input type="text" th:field="*{color}" class="input" placeholder="Couleur" required>
             </div>
             <div class="form-species">
-                <select th:field="*{species}" class="input">
+                <select th:field="*{species}" class="input" required>
                     <option value="">Choisir l'espèce</option>
                     <option th:each="species : ${species}" th:value="${species.id}" th:text="${species.commonName}">
                 </select>
             </div>
             <div class="form-animal">
-                <select th:field="*{sex}" class="input">
+                <select th:field="*{sex}" class="input" required>
                     <option value="">Choisir le sexe</option>
                     <option th:each="sex : ${sex}" th:value="${sex.name}" th:text="${sex}">
                 </select>
