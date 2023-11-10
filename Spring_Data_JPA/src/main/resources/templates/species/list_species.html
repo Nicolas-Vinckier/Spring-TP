@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <!-- <header th:replace="layout :: header"></header> -->
+
     <h1>Liste des Espèces</h1>
 
     <div id="Recherche">
@@ -27,12 +29,14 @@
                     <tr>
                         <th>Nom commun</th>
                         <th>Nom latin</th>
-                        <th>Modifier</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     <tr th:each="speciesItem : ${speciesList}">
                         <td th:text="${speciesItem.commonName}" />
                         <td th:text="${speciesItem.latinName}" />
-                        <td class="petit"><a th:href="@{'/species/' + ${speciesItem.id}}">📝</a></td>
+                        <td class="petit jaune"><a th:href="@{'/species/' + ${speciesItem.id}}">📝</a></td>
+                        <td class="petit rouge"><a th:href="@{'/species/delete/' + ${speciesItem.id}}">🗑️</a></td>
                     </tr>
                 </tbody>
             </table>
