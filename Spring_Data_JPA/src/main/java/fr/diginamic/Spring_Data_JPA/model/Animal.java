@@ -18,7 +18,7 @@ public class Animal {
     private String name;
 
     @Enumerated(EnumType.STRING)
-    private Sex sex;
+    public Sex sex;
 
     @ManyToOne
     @JoinColumn(name = "species_id")

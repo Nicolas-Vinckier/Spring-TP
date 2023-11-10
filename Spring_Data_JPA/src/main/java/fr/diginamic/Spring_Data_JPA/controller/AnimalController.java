@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import fr.diginamic.Spring_Data_JPA.enums.Sex;
 import fr.diginamic.Spring_Data_JPA.model.Animal;
 
 import fr.diginamic.Spring_Data_JPA.repository.AnimalRepository;
+import fr.diginamic.Spring_Data_JPA.repository.SpeciesRepository;
 
 @Controller
 @RequestMapping("/animal")
@@ -21,6 +23,9 @@ public class AnimalController {
 
     @Autowired
     private AnimalRepository animalRepository;
+
+    @Autowired
+    private SpeciesRepository speciesRepository;
 
     @GetMapping("/")
     public String listAnimal(Model model) {
@@ -42,7 +47,9 @@ public class AnimalController {
 
     @GetMapping("/create")
     public String initCreate(Model model) {
-        model.addAttribute(new Animal());
+        model.addAttribute("animal", new Animal());
+        model.addAttribute("sex", Sex.values());
+        model.addAttribute("species", speciesRepository.findAll());
         return "animal/create_animal";
     }
 
