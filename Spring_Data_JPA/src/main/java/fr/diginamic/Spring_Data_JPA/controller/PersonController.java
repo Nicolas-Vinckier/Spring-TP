@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
 import fr.diginamic.Spring_Data_JPA.model.Person;
+import fr.diginamic.Spring_Data_JPA.repository.AnimalRepository;
 import fr.diginamic.Spring_Data_JPA.repository.PersonRepository;
 
 @Controller
@@ -20,6 +21,9 @@ public class PersonController {
 
     @Autowired
     private PersonRepository personRepository;
+
+    @Autowired
+    private AnimalRepository animalRepository;
 
     @GetMapping("/")
     public String listPerson(Model model) {
@@ -34,6 +38,7 @@ public class PersonController {
         Optional<Person> person = personRepository.findById(id);
         if (person.isPresent()) {
             model.addAttribute(person.get());
+            model.addAttribute(animalRepository.findAll());
             return "person/update_person";
         }
         return "person/error";
@@ -42,6 +47,7 @@ public class PersonController {
     @GetMapping("/create")
     public String initCreate(Model model) {
         model.addAttribute(new Person());
+        model.addAttribute(animalRepository.findAll());
         return "person/create_person";
     }
 
