@@ -23,7 +23,7 @@ header {
 }
 
 
-header a {
+.rouge a {
     background-color: #d35e56;
     padding: 1%;
     border-radius: 100%;
@@ -31,6 +31,24 @@ header a {
     text-decoration: none;
     font-size: 16px;
     margin: 5%;
+}
+
+.rouge a:hover {
+    background-color: red;
+}
+
+.jaune a {
+    background-color: #f7d04b;
+    padding: 1%;
+    border-radius: 100%;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 5%;
+}
+
+.jaune a:hover {
+    background-color: yellow;
 }
 
 /* Main */
@@ -59,10 +77,6 @@ label {
 .boutonsEspeces {
     margin-top: 5%;
     text-align: center;
-}
-
-a:hover {
-    background-color: #ff0000;
 }
 
 table {
