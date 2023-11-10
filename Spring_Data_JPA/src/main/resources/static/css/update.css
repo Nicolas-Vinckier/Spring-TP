@@ -34,7 +34,7 @@
     width: 50%;
 }
 
-#ModificationAnimo * {
+#ModificationAnimo *, #ModificationPerson * {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

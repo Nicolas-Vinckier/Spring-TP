@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modification d'une Personne</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/update.css" />
+    <link rel="stylesheet" href="/css/form.css" />
+</head>
+
+<body>
+    <section id="ModificationPerson">
+        <h1>Modification de <span style="margin-left: 0.3em;" th:text="${person.firstName}"></span></h1>
+
+        <form class="form" th:action="@{/person}" th:object="${person}" th:method="post">
+            <input type="hidden" th:field="*{id}">
+
+            <div class="form-firstname">
+                <input type="text" th:placeholder="*{firstName}" class="input" th:field="*{firstName}" required>
+            </div>
+
+            <div class="form-lastname">
+                <input type="text" th:placeholder="*{lastName}" class="input" th:field="*{lastName}" required>
+            </div>
+
+            <div class="form-age">
+                <input type="number" th:placeholder="*{age}" class="input" th:field="*{age}" required min="0" max="99"
+                    oninput="this.value = Math.max(0, this.value);">
+
+            </div>
+
+            <div class="form-animal">
+                <select th:field="*{animals}" class="input" required>
+                    <option value="">Choisir l'animal</option>
+                    <option th:each="animal : ${animalList}" th:value="${animal.id}" th:text="${animal.name}">
+                </select>
+            </div>
+
+            <div class="form-envoie">
+                <button class="button-confirm">
+                    <span class="text">Modifier</span>
+                </button>
+                <button class="button-confirm" type="button" onclick="window.location='/person'">
+                    <span class="text">Annuler</span>
+                </button>
+            </div>
+
+        </form>
+    </section>
+</body>
