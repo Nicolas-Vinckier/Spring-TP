@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Animaux</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/list.css">
+</head>
+
+<body>
+    <h1>Liste des Animaux</h1>
+
+    <div id="Recherche">
+        <!-- 
+        Balise table pour afficher les données de la liste des espèces
+     -->
+        <header>
+            <!-- Text in button : "➕" + "Ajouter une Espèce" -->
+            <button class="btn-shine" type="button" onclick="window.location='/animal/create'">
+                <span class="text">Ajouter un Animal</span>
+            </button>
+
+            <table class="mainTable">
+                <thead>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Sexe</th>
+                        <th>Couleur</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr th:each="animalItem : ${animalList}">
+                        <td th:text="${animalItem.name}" />
+                        <td th:text="${animalItem.sex}" />
+                        <td th:text="${animalItem.color}" />
+                        <td class="petit jaune"><a th:href="@{'/animal/' + ${animalItem.id}}">📝</a></td>
+                        <td class="petit rouge"><a th:href="@{'/animal/delete/' + ${animalItem.id}}">🗑️</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </header>
+    </div>
+</body>
