@@ -35,7 +35,6 @@ header {
     text-decoration: none;
     color: black;
     font-size: 1em;
-    font-weight: bold;
     padding: 1%;
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
@@ -44,6 +43,14 @@ header {
 .menu a:hover {
     background-color: #d35e56;
     color: white;
+}
+
+.actuel {
+    font-weight: bold;
+}
+
+.getRetourned {
+    transform: rotate(180deg);
 }
 
 /* Main */
