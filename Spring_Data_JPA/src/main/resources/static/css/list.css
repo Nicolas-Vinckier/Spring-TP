@@ -22,6 +22,30 @@ header {
     max-height: 5em;
 }
 
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 1em;
+    font-weight: bold;
+    padding: 1%;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu a:hover {
+    background-color: #d35e56;
+    color: white;
+}
+
 /* Main */
 /* Selection */
 #Selection {
